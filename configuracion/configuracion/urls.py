@@ -26,7 +26,7 @@ urlpatterns = [
     path('', Home, name="home"),
     path('medicos/', MedicosVista, name="medicos"),
     path('consultoriomedico/', consultoriomedico, name="consultoriomedico"),
-    path('pacientes/', PacienteVista, name="pacientes")
+    path('pacientes/', PacienteVista, name="pacientes"),
     path('consultoriopacientes/', consultoriopacientes, name="consultoriopacientes"),
 
 ]

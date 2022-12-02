@@ -27,11 +27,9 @@ def consultoriomedico(request):
 def consultoriopacientes(request):
     pacientesconsulta=Pacientes.objects.all()
     datospaciente={
-        "medicos":pacientesconsulta
-
-
+        "pacientes":pacientesconsulta
     }
-    return render (request,'consultoriopacientes.html',pacientesconsulta)
+    return render (request,'pacientes2.html',datospaciente)
 
 
 
@@ -95,9 +93,9 @@ def PacienteVista(request):
                 nombrepaciente=datos["nombrepaciente"],
                 apellidospaciente=datos["apellidosPaciente"],
                 cedulapaciente=datos["cedulaPaciente"],
-                field_tipoafiliado=datos["TipoAfiliado"],
-                field_regimen=datos["Regimen"],
-                field_grupo_ingresos=datos["Grupo_ingresos"]
+                tipoafiliado=datos["TipoAfiliado"],
+                regimen=datos["Regimen"],
+                grupo_ingresos=datos["Grupo_ingresos"]
                
            )
             PacienteNuevo.save()

@@ -126,7 +126,7 @@ class Medicos(models.Model):
     nombres = models.CharField(max_length=50)
     apellidos = models.CharField(max_length=50)
     cedula = models.CharField(max_length=12)
-    tarjeta = models.CharField(max_length=20)
+    targeta = models.CharField(max_length=20)
     especialidad = models.IntegerField()
     jornada = models.IntegerField()
     contacto = models.CharField(max_length=15)
@@ -139,11 +139,11 @@ class Medicos(models.Model):
 
 class Pacientes(models.Model):
     nombrepaciente = models.CharField(max_length=50)
-    apellidospaciente = models.CharField(max_length=50)
-    cedulapaciente = models.CharField(max_length=50)
-    field_tipoafiliado = models.CharField(max_length=10)
-    field_regimen = models.CharField(max_length=20)
-    field_grupo_ingresos = models.CharField(max_length=20)
+    apellidospaciente = models.CharField(db_column='apellidosPaciente', max_length=50)  # Field name made lowercase.
+    cedulapaciente = models.CharField(db_column='cedulaPaciente', max_length=50)  # Field name made lowercase.
+    tipoafiliado = models.CharField(db_column=' TipoAfiliado', max_length=50)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it started with '_'.
+    regimen = models.CharField(db_column='  Regimen', max_length=10)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it started with '_'.
+    grupo_ingresos = models.CharField(db_column='   Grupo_ingresos', max_length=11)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it started with '_'.
 
     class Meta:
         managed = False
